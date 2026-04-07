@@ -7,6 +7,7 @@ primary_region = "fra"
 [[services]]
   internal_port = 443
   protocol = "tcp"
+  processes = ["app"] # هذا السطر هو الحل
   auto_start_machines = true
   auto_stop_machines = false
 
