@@ -2,13 +2,14 @@ app = "alwaelydhs-proxy"
 primary_region = "fra"
 
 [[services]]
-  internal_port = 443    # غيرها من 80 إلى 443
+  internal_port = 443
   protocol = "tcp"
   auto_start_machines = true
   auto_stop_machines = true
 
   [[services.ports]]
-    port = 80            # ابقى على 80 براحتك أو حولها 443
+    port = 443
+    handlers = ["tls"] # ضروري جداً لتشفير MTProto
 
 [[vm]]
   cpu_kind = "shared"

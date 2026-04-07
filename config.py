@@ -1,27 +1,22 @@
-PORT = 443
+import os
+import json
 
-# name -> secret (32 hex chars)
-USERS = {
-    "tg":  "00000000000000000000000000000001",
-    # "tg2": "0123456789abcdef0123456789abcdef",
-}
+HOST = "0.0.0.0"
+PORT = int(os.getenv('PORT', 443))
+
+# السكرت الجديد تم وضعه هنا كقيمة افتراضية
+DEFAULT_USERS = '{"tg": "5c6d1000226b0463ae7ac34be5a72afb"}'
+
+try:
+    USERS = json.loads(os.getenv('USERS', DEFAULT_USERS))
+except:
+    USERS = json.loads(DEFAULT_USERS)
 
 MODES = {
-    # Classic mode, easy to detect
     "classic": False,
-
-    # Makes the proxy harder to detect
-    # Can be incompatible with very old clients
     "secure": False,
-
-    # Makes the proxy even more hard to detect
-    # Can be incompatible with old clients
     "tls": True
 }
 
-# The domain for TLS mode, bad clients are proxied there
-# Use random existing domain, proxy checks it on start
-# TLS_DOMAIN = "www.google.com"
-
-# Tag for advertising, obtainable from @MTProxybot
-# AD_TAG = "3c09c680b76ee91a4c25ad51f742267d"
+TLS_DOMAIN = os.getenv('TLS_DOMAIN', 'www.google.com')
+AD_TAG = os.getenv('AD_TAG', '')
