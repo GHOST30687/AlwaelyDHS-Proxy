@@ -5,11 +5,11 @@ primary_region = "fra"
   internal_port = 443
   protocol = "tcp"
   auto_start_machines = true
-  auto_stop_machines = true
+  auto_stop_machines = false # ضروري جداً لضمان عدم توقف السيرفر تلقائياً
 
   [[services.ports]]
     port = 443
-    handlers = ["tls"] # ضروري جداً لتشفير MTProto
+    handlers = [] # إفراغ الـ handlers يجعل البيانات تمر "خام" للكود ليفك تشفيرها بنفسه
 
 [[vm]]
   cpu_kind = "shared"
