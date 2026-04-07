@@ -2,7 +2,7 @@ app = "alwaelydhs-proxy"
 primary_region = "fra"
 
 [processes]
-  app = "python3 mtprotoproxy.py 443 ee5c6d1000226b0463ae7ac34be5a72afb676f6f676c652e636f6d c50ab2562863905739cfaf92ec619de8"
+  app = "python3 mtprotoproxy.py 443 ee5c6d1000226b0463ae7ac34be5a72a c50ab2562863905739cfaf92ec619de8"
 
 [[services]]
   internal_port = 443
