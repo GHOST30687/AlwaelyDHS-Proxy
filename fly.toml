@@ -1,14 +1,14 @@
-app = "alwaelydhs"
+app = "alwaelydhs-proxy"
 primary_region = "fra"
 
 [[services]]
-  internal_port = 443
+  internal_port = 443    # غيرها من 80 إلى 443
   protocol = "tcp"
   auto_start_machines = true
   auto_stop_machines = true
 
   [[services.ports]]
-    port = 443
+    port = 80            # ابقى على 80 براحتك أو حولها 443
 
 [[vm]]
   cpu_kind = "shared"
