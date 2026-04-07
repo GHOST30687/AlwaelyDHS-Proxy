@@ -5,15 +5,14 @@ primary_region = "fra"
   app = "python3 mtprotoproxy.py -p 443 -s ee5c6d1000226b0463ae7ac34be5a72afb676f6f676c652e636f6d -t c50ab2562863905739cfaf92ec619de8"
 
 [[services]]
-  internal_port = 443
   protocol = "tcp"
-  processes = ["app"] # هذا السطر هو الحل
+  internal_port = 443
+  processes = ["app"]
   auto_start_machines = true
   auto_stop_machines = false
 
   [[services.ports]]
     port = 443
-    handlers = [] 
 
 [[vm]]
   cpu_kind = "shared"
