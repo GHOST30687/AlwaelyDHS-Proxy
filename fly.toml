@@ -1,0 +1,16 @@
+app = "alwaelydhs"
+primary_region = "fra"
+
+[[services]]
+  internal_port = 443
+  protocol = "tcp"
+  auto_start_machines = true
+  auto_stop_machines = true
+
+  [[services.ports]]
+    port = 443
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 2048
