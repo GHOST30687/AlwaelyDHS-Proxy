@@ -2,12 +2,12 @@ app = "alwaelydhs-proxy"
 primary_region = "fra"
 
 [processes]
-  app = "python3 mtprotoproxy.py"
+  # ضفنا المفتاح والتاج هنا حتى يتفعل الإعلان غصباً على السيرفر
+  app = "python3 mtprotoproxy.py -p 443 -s 5c6d1000226b0463ae7ac34be5a72afb -t c50ab2562863905739cfaf92ec619de8"
 
 [[services]]
   internal_port = 443
   protocol = "tcp"
-  # هذا السطر هو المفتاح
   processes = ["app"] 
   
   auto_start_machines = true
