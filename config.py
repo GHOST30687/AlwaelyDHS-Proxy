@@ -20,3 +20,4 @@ MODES = {
 
 TLS_DOMAIN = os.getenv('TLS_DOMAIN', 'www.google.com')
 AD_TAG = os.getenv('AD_TAG', '')
+PREFER_IPV6 = False
